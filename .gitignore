@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Local database (contains user accounts) - rebuild from the .sql scripts
+*.mdf
+*.ldf

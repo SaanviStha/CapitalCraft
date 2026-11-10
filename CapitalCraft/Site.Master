@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capital Craft</title>
+  <link rel="stylesheet" href="/css/style.css?v=37">
+  <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+</head>
+<body>
+  <form runat="server">
+
+    <header id="navbar">
+     <a href="/Default.aspx" id="logo"><span class="logo-mark">CC</span>Capital Craft</a>
+      <nav id="nav-center">
+        <a href="/Default.aspx">Home</a>
+        <a href="/pages/Courses.aspx">Courses</a>
+        <a href="/pages/About.aspx">About</a>
+      </nav>
+      <div id="nav-right">
+        <% if (Context.Session == null || Context.Session["UserId"] == null) { %>
+          <a href="/pages/Login.aspx" class="btn btn-outline">Log in</a>
+          <a href="/pages/Register.aspx" class="btn">Sign up</a>
+        <% } else { %>
+          <a href="<%= Context.Session["Role"].ToString() == "Admin" ? "/admin/Dashboard.aspx" : "/member/Dashboard.aspx" %>" class="btn btn-outline">My Dashboard</a>
+          <a href="/pages/Logout.aspx" class="btn">Log out</a>
+        <% } %>
+      </div>
+    </header>
+
+    <main>
+      <asp:ContentPlaceHolder ID="Main" runat="server" />
+    </main>
+
+      <footer id="footer">
+  <div>
+    <a href="/Default.aspx" style="font-size: 20px; font-weight: bold;"><span class="logo-mark" style="background-color: #b08968; color: #2e2a24;">CC</span>Capital Craft</a>
+    <p>Learn to build, protect and commercialise innovation-driven ventures.</p>
+  </div>
+  <div>
+    <h4>Learn</h4>
+    <a href="/pages/Courses.aspx">All Courses</a>
+  </div>
+  <div>
+    <h4>Company</h4>
+    <a href="/pages/About.aspx">About Capital Craft</a><br>
+    <a href="/pages/Login.aspx">Admin Portal</a>
+  </div>
+</footer>
+<p id="footer-bottom">© 2026 Capital Craft · Web-based Learning System · Privacy Policy · Terms of Use</p>
+
+  </form>
+  <script src="/js/script.js?v=25"></script>
+</body>
+</html>
