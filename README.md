@@ -2,7 +2,6 @@
 
 A learning website about building and launching ventures. Members can sign up, enrol in courses, read the lessons and take a quiz for each course. Admins can manage courses, lessons, quiz questions and users.
 
-Made for the **CT050-3-2-WAPP Web Applications** group assignment.
 
 ## Built With
 
@@ -29,9 +28,4 @@ Made for the **CT050-3-2-WAPP Web Applications** group assignment.
 4. Register an account. To make it an admin, run:
    `UPDATE Users SET Role = 'Admin' WHERE Email = 'your@email.com';`
 
-## Team
 
-- Roshni K. Shah
-- Saanvi Shrestha
-- Sadiksha Timsina
-- Shirsha Bhandari
